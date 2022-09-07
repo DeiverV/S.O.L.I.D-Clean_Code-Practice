@@ -28,7 +28,7 @@
             purple: ['moras','uvas'],
         }
 
-        if(  !Object.keys( fruitsPerColor  ).includes(color)) throw Error('The  color must be lol');
+        if( !Object.keys( fruitsPerColor ).includes(color)) throw Error('The color must be red, yellow or purple');
 
         return fruitsPerColor[color]
 
