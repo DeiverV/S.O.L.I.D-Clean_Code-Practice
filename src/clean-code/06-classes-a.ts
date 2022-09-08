@@ -28,7 +28,7 @@
             public email: string,
             public role: string,
             name: string,
-            genter: Gender,
+            gender: Gender,
             birthdate: Date,
         ){
             super( name, gender, birthdate );
