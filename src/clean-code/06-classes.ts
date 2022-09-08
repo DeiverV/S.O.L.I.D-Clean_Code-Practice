@@ -22,7 +22,48 @@
             ){}
     }
 
-    const newPerson = new Person('Fernando','M',  new Date('1985-10-21'))
-    console.log(newPerson)
+    class User extends Person {
+        public lastAccess: Date;
+        constructor(
+            public email: string,
+            public role: string,
+            name: string,
+            genter: Gender,
+            birthdate: Date,
+        ){
+            super( name, gender, birthdate );
+            this.lastAccess = new Date();
+        }
+
+        checkCredentials(){
+            return true;
+        }
+    }
+
+    class UserSetting extends User {
+        constructor(
+            public workingDirectory: string,
+            public lastOpenFolder: string,
+            email: string,
+            role: string,
+            name: string,
+            gender: Gender,
+            birthdate: Date,
+        ){
+            super(email, role, name, gender, birthdate);
+        }
+    }
+
+    const userSettings = new UserSetting(
+        '/usr//home',
+        '/home',
+        'goguillos@gmail.com',
+        'Admin',
+        'Omar',
+        'F',
+        new Date('2004-11-09')
+    )
+
+    console.log({ userSettings });
 
 })();
